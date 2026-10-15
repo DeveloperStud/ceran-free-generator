@@ -1,0 +1,15 @@
+name = "ceran-free-generator"
+main = "src/worker.js"
+compatibility_date = "2026-10-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Free Cloudflare Pages + Workers
+pages_build_output_dir = "public"
+
+# Optional: bind Workers AI when deployed on your CF account (free tier neurons)
+[ai]
+binding = "AI"
+
+[vars]
+APP_NAME = "Ceran Free Generator"
+# No secrets required for Pollinations free engine

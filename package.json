@@ -1,0 +1,14 @@
+{
+  "name": "ceran-free-generator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Entirely free artistic image generator — Cloudflare Pages + free AI engines (Pollinations + optional Workers AI)",
+  "scripts": {
+    "dev": "wrangler pages dev public --compatibility-date=2026-10-01",
+    "deploy": "wrangler pages deploy public --project-name=ceran-free-generator",
+    "deploy:worker": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.86.0"
+  }
+}
