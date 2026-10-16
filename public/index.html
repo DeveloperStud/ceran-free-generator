@@ -1,380 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Ceran Free Generator — Entirely Free AI Image Studio</title>
-<meta name="description" content="Standalone free AI image generator for artistic nude wrap studies. No signup. Powered by free Pollinations + optional Cloudflare Workers AI." />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ceran Free Generator — Published</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        ink: '#0a0a0b',
-        surface: '#141416',
-        muted: '#8b8b93',
-        accent: '#c9a87c',
-        glow: '#e8d5b5'
-      },
-      fontFamily: {
-        display: ['"Playfair Display"', 'serif'],
-        body: ['Inter', 'system-ui', 'sans-serif']
-      }
-    }
-  }
-}
-</script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet" />
+<script>tailwind.config={theme:{extend:{colors:{ink:'#0a0a0b',surface:'#141416',muted:'#8b8b93',accent:'#c9a87c',glow:'#e8d5b5'},fontFamily:{display:['"Playfair Display"','serif'],body:['Inter','system-ui','sans-serif']}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet"/>
 <style>
-  body { background: #0a0a0b; color: #f5f5f4; }
-  .glass { background: rgba(20,20,22,.78); backdrop-filter: blur(14px); border: 1px solid rgba(201,168,124,.16); }
-  .btn-accent { background: linear-gradient(135deg, #c9a87c, #a88b5e); color: #0a0a0b; }
-  .btn-accent:hover { filter: brightness(1.08); }
-  .btn-accent:disabled { opacity: .5; cursor: not-allowed; filter: none; }
-  .slider { accent-color: #c9a87c; }
-  .chip { cursor: pointer; transition: .15s; }
-  .chip.on { background: #2a241c; border-color: #c9a87c; color: #e8d5b5; }
-  #resultImg { max-height: 70vh; }
-  .pulse { animation: pulse 1.2s ease-in-out infinite; }
-  @keyframes pulse { 0%,100%{opacity:.45} 50%{opacity:1} }
+body{background:#0a0a0b;color:#f5f5f4}
+.glass{background:rgba(20,20,22,.8);backdrop-filter:blur(14px);border:1px solid rgba(201,168,124,.16)}
+.btn-accent{background:linear-gradient(135deg,#c9a87c,#a88b5e);color:#0a0a0b}
+.btn-accent:hover{filter:brightness(1.08)}
+.btn-accent:disabled{opacity:.5;cursor:not-allowed}
+.slider{accent-color:#c9a87c}
+video{background:#000}
 </style>
 </head>
 <body class="font-body antialiased">
 <header class="fixed top-0 inset-x-0 z-50 glass">
   <div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
-    <div class="font-display text-xl tracking-wide text-glow">Ceran <span class="text-muted font-normal text-base">Free Generator</span></div>
-    <div class="flex items-center gap-3 text-xs">
-      <span id="engineBadge" class="glass px-2.5 py-1 rounded-full text-accent">Free AI · Online</span>
-      <a href="https://grok.com/imagine/post/2910c73d-e099-4a50-b772-3e200acf793a?source=agent" target="_blank" rel="noopener" class="text-muted hover:text-accent">Study #001 →</a>
-    </div>
+    <div class="font-display text-xl text-glow">Ceran <span class="text-muted text-base font-normal">Free Generator</span></div>
+    <nav class="hidden sm:flex gap-5 text-sm text-muted">
+      <a href="#study" class="hover:text-accent">Study</a>
+      <a href="#generate" class="hover:text-accent">Generate</a>
+      <a href="#gallery" class="hover:text-accent">Gallery</a>
+    </nav>
+    <span class="text-xs glass px-2.5 py-1 rounded-full text-accent">Published · Free AI</span>
   </div>
 </header>
-
 <main class="max-w-6xl mx-auto px-4 pt-20 pb-16">
-  <div class="mb-8">
-    <p class="text-accent text-xs tracking-widest uppercase mb-2">Entirely free · Standalone · No signup · Cloudflare-ready</p>
-    <h1 class="font-display text-3xl sm:text-4xl text-glow mb-2">Free AI Image Generator</h1>
-    <p class="text-muted max-w-2xl text-sm sm:text-base">Production free stack: <strong class="text-glow">Pollinations FLUX</strong> (no API key) + optional <strong class="text-glow">Cloudflare Workers AI</strong> when deployed on your free CF account. Built for ceran/saran wrap art studies and open prompts.</p>
-  </div>
+  <p class="text-accent text-xs tracking-widest uppercase mb-2">Build & Publish · Study #001</p>
+  <h1 class="font-display text-3xl sm:text-4xl text-glow mb-3">Ceran Wrap Free Studio</h1>
+  <p class="text-muted max-w-2xl mb-10 text-sm">Interactive wrap study + entirely free AI image generator (Pollinations FLUX). Adult fine art · 18+.</p>
 
-  <div class="grid lg:grid-cols-2 gap-6">
-    <!-- Controls -->
-    <div class="glass rounded-2xl p-5 sm:p-6 space-y-4">
-      <div>
-        <label class="block text-sm text-muted mb-1.5">Prompt</label>
-        <textarea id="prompt" rows="4" class="w-full bg-ink border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accent/50 resize-none" placeholder="Describe the scene…">A ceran wrapped neglige that is pressed firmly stretching over the form of a nude art photography model, elegant studio light</textarea>
+  <section id="study" class="grid lg:grid-cols-2 gap-6 mb-12">
+    <div class="glass rounded-2xl overflow-hidden">
+      <div class="relative aspect-square bg-black">
+        <video id="vid" class="w-full h-full object-cover" poster="frames/frame_01.jpg" controls playsinline loop muted>
+          <source src="media/wrap-study.mp4" type="video/mp4"/>
+        </video>
       </div>
-
-      <div>
-        <label class="block text-sm text-muted mb-1.5">Style preset</label>
-        <div class="flex flex-wrap gap-2" id="styleChips">
-          <button type="button" class="chip on glass px-3 py-1.5 rounded-full text-xs border border-white/10" data-style="saran-cling">Saran / Ceran Cling</button>
-          <button type="button" class="chip glass px-3 py-1.5 rounded-full text-xs border border-white/10" data-style="front-firm">Front Firm Stretch</button>
-          <button type="button" class="chip glass px-3 py-1.5 rounded-full text-xs border border-white/10" data-style="stretch-gluteus">Rear Gluteus Study</button>
-          <button type="button" class="chip glass px-3 py-1.5 rounded-full text-xs border border-white/10" data-style="reflective">Reflective Plastic</button>
-          <button type="button" class="chip glass px-3 py-1.5 rounded-full text-xs border border-white/10" data-style="soft-studio">Soft Studio</button>
-        </div>
+      <div class="p-4 flex flex-wrap gap-2 text-sm items-center">
+        <button type="button" class="btn-accent px-3 py-1.5 rounded-full text-xs font-semibold" onclick="document.getElementById('vid').play()">Play</button>
+        <button type="button" class="glass px-3 py-1.5 rounded-full text-xs" onclick="document.getElementById('vid').playbackRate=0.5">0.5×</button>
+        <button type="button" class="glass px-3 py-1.5 rounded-full text-xs" onclick="document.getElementById('vid').playbackRate=1">1×</button>
+        <a class="glass px-3 py-1.5 rounded-full text-xs hover:text-accent ml-auto" href="https://grok.com/imagine/post/2910c73d-e099-4a50-b772-3e200acf793a?source=agent" target="_blank" rel="noopener">Open on Grok →</a>
       </div>
-
-      <div class="grid sm:grid-cols-2 gap-3">
-        <div>
-          <label class="block text-sm text-muted mb-1.5">Aspect</label>
-          <select id="aspect" class="w-full bg-ink border border-white/10 rounded-xl px-3 py-2.5 text-sm">
-            <option value="768x1024" selected>2:3 Portrait (768×1024)</option>
-            <option value="1024x1024">1:1 Square</option>
-            <option value="1024x768">3:2 Landscape</option>
-            <option value="576x1024">9:16 Phone</option>
-            <option value="512x512">512² Fast free</option>
-          </select>
-        </div>
-        <div>
-          <label class="block text-sm text-muted mb-1.5">Engine</label>
-          <select id="engine" class="w-full bg-ink border border-white/10 rounded-xl px-3 py-2.5 text-sm">
-            <option value="pollinations" selected>Pollinations FLUX (free, no key)</option>
-            <option value="auto">Auto (CF AI if available, else free)</option>
-            <option value="cloudflare">Cloudflare Workers AI (needs deploy)</option>
-          </select>
-        </div>
-      </div>
-
-      <div>
-        <label class="block text-sm text-muted mb-1.5">Wrap intensity — <span id="intensityVal">72</span>%</label>
-        <input type="range" id="intensity" min="20" max="100" value="72" class="w-full slider" />
-      </div>
-
-      <div>
-        <label class="block text-sm text-muted mb-1.5">Seed (optional)</label>
-        <input type="number" id="seed" class="w-full bg-ink border border-white/10 rounded-xl px-3 py-2.5 text-sm" placeholder="blank = random" />
-      </div>
-
-      <div class="flex flex-wrap gap-2 pt-1">
-        <button id="btnGen" type="button" class="btn-accent px-5 py-2.5 rounded-full font-semibold text-sm">Generate Free</button>
-        <button id="btnRandom" type="button" class="glass px-4 py-2.5 rounded-full text-sm">Randomize</button>
-        <button id="btnDownload" type="button" class="glass px-4 py-2.5 rounded-full text-sm" disabled>Download</button>
-        <button id="btnCopyPrompt" type="button" class="glass px-4 py-2.5 rounded-full text-sm">Copy enhanced prompt</button>
-      </div>
-
-      <p class="text-xs text-muted leading-relaxed">
-        Free production path: images are generated via public free AI (Pollinations) or your Cloudflare free Workers AI neurons after deploy.
-        No credit card required for free tier usage. Adult artistic content — 18+.
-      </p>
     </div>
+    <div class="glass rounded-2xl p-6 flex flex-col justify-center">
+      <h2 class="font-display text-2xl text-glow mb-3">Study #001</h2>
+      <p class="text-muted text-sm mb-4">Rear wrap stretch · hands spreading gluteus · pressed taut saran/ceran plastic · soft studio · 6s · 960×960</p>
+      <ul class="text-sm text-muted space-y-2 mb-6">
+        <li>✦ Interactive player (speed / loop)</li>
+        <li>✦ Free AI generator for new studies</li>
+        <li>✦ Key-frame gallery</li>
+        <li>✦ No signup · no paid keys</li>
+      </ul>
+      <a href="#generate" class="btn-accent inline-flex px-5 py-2.5 rounded-full font-semibold text-sm w-fit">Open Free Generator</a>
+    </div>
+  </section>
 
-    <!-- Result -->
-    <div class="glass rounded-2xl p-5 sm:p-6 flex flex-col min-h-[420px]">
-      <div class="flex items-center justify-between mb-3">
-        <h2 class="font-display text-lg text-glow">Result</h2>
-        <span id="status" class="text-xs text-muted">Ready</span>
-      </div>
-      <div id="resultBox" class="flex-1 rounded-xl bg-ink border border-white/10 flex items-center justify-center overflow-hidden relative min-h-[320px]">
-        <div id="placeholder" class="text-center p-6 text-muted text-sm">
-          <p class="font-display text-glow text-lg mb-2">Your free generation appears here</p>
-          <p>Hit <span class="text-accent">Generate Free</span> — no account needed.</p>
-          <div class="mt-4 grid grid-cols-3 gap-2 max-w-xs mx-auto opacity-60">
-            <img src="frames/frame_01.jpg" class="rounded-lg aspect-square object-cover" alt="" />
-            <img src="frames/frame_03.jpg" class="rounded-lg aspect-square object-cover" alt="" />
-            <img src="frames/frame_05.jpg" class="rounded-lg aspect-square object-cover" alt="" />
+  <section id="generate" class="mb-12">
+    <h2 class="font-display text-2xl text-glow mb-2">Free Image Generator</h2>
+    <p class="text-muted text-sm mb-5">Engine: <strong class="text-glow">Pollinations FLUX</strong> — free, no API key.</p>
+    <div class="grid lg:grid-cols-2 gap-6">
+      <div class="glass rounded-2xl p-5 space-y-4">
+        <div>
+          <label class="block text-sm text-muted mb-1">Prompt</label>
+          <textarea id="prompt" rows="4" class="w-full bg-ink border border-white/10 rounded-xl px-3 py-2 text-sm">A ceran wrapped neglige that is pressed firmly stretching over the form of a nude art photography model, elegant studio light</textarea>
+        </div>
+        <div>
+          <label class="block text-sm text-muted mb-1">Style</label>
+          <select id="style" class="w-full bg-ink border border-white/10 rounded-xl px-3 py-2 text-sm">
+            <option value="saran-cling">Saran / Ceran Cling</option>
+            <option value="front-firm">Front Firm Stretch</option>
+            <option value="stretch-gluteus" selected>Rear Gluteus Study</option>
+            <option value="reflective">Reflective Plastic</option>
+            <option value="soft-studio">Soft Studio</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-sm text-muted mb-1">Size</label>
+            <select id="aspect" class="w-full bg-ink border border-white/10 rounded-xl px-3 py-2 text-sm">
+              <option value="768x1024">768×1024</option>
+              <option value="1024x1024">1024²</option>
+              <option value="512x512" selected>512² fast free</option>
+            </select>
           </div>
-          <p class="text-[10px] mt-2">Study #001 frames (reference)</p>
+          <div>
+            <label class="block text-sm text-muted mb-1">Seed</label>
+            <input id="seed" type="number" class="w-full bg-ink border border-white/10 rounded-xl px-3 py-2 text-sm" placeholder="random"/>
+          </div>
         </div>
-        <img id="resultImg" class="hidden max-w-full max-h-[70vh] object-contain" alt="Generated" />
+        <div>
+          <label class="block text-sm text-muted mb-1">Wrap intensity — <span id="iv">75</span>%</label>
+          <input id="intensity" type="range" min="20" max="100" value="75" class="w-full slider" oninput="document.getElementById('iv').textContent=this.value"/>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <button id="btnGen" type="button" class="btn-accent px-5 py-2.5 rounded-full font-semibold text-sm">Generate Free</button>
+          <button id="btnDl" type="button" class="glass px-4 py-2.5 rounded-full text-sm" disabled>Download</button>
+        </div>
       </div>
-      <div id="meta" class="mt-3 text-xs text-muted break-words"></div>
+      <div class="glass rounded-2xl p-5 flex flex-col min-h-[360px]">
+        <div class="flex justify-between mb-2"><span class="font-display text-glow">Result</span><span id="st" class="text-xs text-muted">Ready</span></div>
+        <div class="flex-1 rounded-xl bg-ink border border-white/10 flex items-center justify-center overflow-hidden min-h-[280px]">
+          <p id="ph" class="text-muted text-sm text-center px-4">Hit Generate Free for a real free AI image</p>
+          <img id="out" class="hidden max-w-full max-h-[65vh] object-contain" alt="Generated"/>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <!-- Gallery / history -->
-  <section class="mt-10">
-    <h2 class="font-display text-2xl text-glow mb-3">Session gallery</h2>
-    <p class="text-muted text-sm mb-4">Saved in this browser only. Free forever.</p>
-    <div id="gallery" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3"></div>
   </section>
 
-  <section class="mt-12 glass rounded-2xl p-6">
-    <h2 class="font-display text-xl text-glow mb-2">Deploy free on Cloudflare</h2>
-    <ol class="text-sm text-muted space-y-2 list-decimal list-inside">
-      <li>Push this repo to GitHub (already prepared as <code class="text-accent">ceran-free-generator</code>).</li>
-      <li>Cloudflare Dashboard → Workers & Pages → Create → Connect to Git → select repo.</li>
-      <li>Framework preset: None · Build: empty · Output: <code class="text-accent">public</code> · Deploy.</li>
-      <li>(Optional) Add Worker with AI binding for FLUX on free neurons, or keep pure Pollinations static.</li>
-    </ol>
-    <p class="text-xs text-muted mt-3">Or: <code class="text-accent">npx wrangler pages deploy public --project-name=ceran-free-generator</code> after <code>wrangler login</code>.</p>
+  <section id="gallery" class="mb-12">
+    <h2 class="font-display text-2xl text-glow mb-2">Key frames · Study #001</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+      <img src="frames/frame_01.jpg" class="rounded-xl border border-white/10 w-full aspect-square object-cover" alt="1"/>
+      <img src="frames/frame_02.jpg" class="rounded-xl border border-white/10 w-full aspect-square object-cover" alt="2"/>
+      <img src="frames/frame_03.jpg" class="rounded-xl border border-white/10 w-full aspect-square object-cover" alt="3"/>
+      <img src="frames/frame_04.jpg" class="rounded-xl border border-white/10 w-full aspect-square object-cover" alt="4"/>
+      <img src="frames/frame_05.jpg" class="rounded-xl border border-white/10 w-full aspect-square object-cover" alt="5"/>
+      <img src="frames/frame_06.jpg" class="rounded-xl border border-white/10 w-full aspect-square object-cover" alt="6"/>
+    </div>
   </section>
+
+  <footer class="text-center text-xs text-muted border-t border-white/5 pt-8">
+    <p>Ceran Free Generator · Study #001 · Free Pollinations FLUX</p>
+    <p class="mt-1"><a class="text-accent" href="https://github.com/DeveloperStud/ceran-free-generator" target="_blank">GitHub package (Cloudflare)</a></p>
+  </footer>
 </main>
-
-<footer class="text-center text-xs text-muted py-8 border-t border-white/5">
-  Ceran Free Generator · Entirely free AI · Adult fine art · No tracking backend · Cloudflare Pages ready
-</footer>
-
 <script>
-(function () {
-  const styleMap = {
-    'saran-cling': 'clear saran wrap / ceran plastic film pressed firmly stretching over form, taut transparent cling, artistic nude photography, high detail, soft studio light',
-    'front-firm': 'front view nude art photography model, wrap pressed firmly stretching over vulva and mons, transparent plastic cling, elegant studio',
-    'stretch-gluteus': 'rear view nude art photography model, wrap stretching over gluteus, hands spreading, pressed taut plastic, fine art',
-    'reflective': 'reflective wet-look plastic film, specular highlights, clinical art light, photorealistic',
-    'soft-studio': 'soft diffused studio light, pale gray seamless, elegant fine art nude photography'
-  };
-
-  let currentStyle = 'saran-cling';
-  let lastDataUrl = null;
-  let hist = JSON.parse(localStorage.getItem('ceranFreeHist') || '[]');
-
-  const $ = (id) => document.getElementById(id);
-  const status = (t) => { $('status').textContent = t; };
-
-  // chips
-  document.querySelectorAll('#styleChips .chip').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('#styleChips .chip').forEach((b) => b.classList.remove('on'));
-      btn.classList.add('on');
-      currentStyle = btn.dataset.style;
-    });
-  });
-  $('intensity').addEventListener('input', (e) => {
-    $('intensityVal').textContent = e.target.value;
-  });
-
-  function enhancedPrompt() {
-    const base = $('prompt').value.trim();
-    const intensity = $('intensity').value;
-    const extra = styleMap[currentStyle] || styleMap['saran-cling'];
-    return `${base}, ${extra}, wrap intensity ${intensity}%, photorealistic, high detail, tasteful erotic fine art composition`;
-  }
-
-  function dims() {
-    const [w, h] = $('aspect').value.split('x').map(Number);
-    return { width: w, height: h };
-  }
-
-  async function generateViaAPI(full, engine) {
-    const { width, height } = dims();
-    const seed = $('seed').value || null;
-    const res = await fetch('/api/generate', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ prompt: $('prompt').value.trim(), style: currentStyle, width, height, engine, seed })
-    });
-    if (!res.ok) throw new Error('API ' + res.status);
-    return res.json();
-  }
-
-  async function generateClientPollinations(full) {
-    const { width, height } = dims();
-    const seed = $('seed').value ? Number($('seed').value) : Math.floor(Math.random() * 1e9);
-    const url = `https://image.pollinations.ai/prompt/${encodeURIComponent(full)}?width=${width}&height=${height}&seed=${seed}&nologo=true&enhance=true&model=flux`;
-    // load as image then canvas for downloadable data URL (CORS: pollinations allows)
-    const img = new Image();
-    img.crossOrigin = 'anonymous';
-    await new Promise((resolve, reject) => {
-      img.onload = resolve;
-      img.onerror = () => reject(new Error('Pollinations load failed'));
-      img.src = url + '&t=' + Date.now();
-    });
-    const canvas = document.createElement('canvas');
-    canvas.width = img.naturalWidth || width;
-    canvas.height = img.naturalHeight || height;
-    canvas.getContext('2d').drawImage(img, 0, 0);
-    const dataUrl = canvas.toDataURL('image/jpeg', 0.92);
-    return { ok: true, free: true, engine: 'pollinations-flux-client', dataUrl, seed, url, prompt: full };
-  }
-
-  async function runGenerate() {
-    const base = $('prompt').value.trim();
-    if (!base) { alert('Enter a prompt'); return; }
-    const full = enhancedPrompt();
-    const engine = $('engine').value;
-    const btn = $('btnGen');
-    btn.disabled = true;
-    status('Generating free image…');
-    $('placeholder')?.classList.add('hidden');
-    $('resultImg').classList.add('hidden');
-    $('resultBox').insertAdjacentHTML('beforeend', '<div id="loading" class="absolute inset-0 flex items-center justify-center"><div class="pulse text-accent text-sm">Free AI rendering…</div></div>');
-
-    try {
-      let data;
-      // Prefer client free path first for pure static Pages; try API if worker present
-      if (engine === 'pollinations') {
-        try {
-          // try API (if worker deployed)
-          data = await generateViaAPI(full, 'pollinations');
-        } catch {
-          data = await generateClientPollinations(full);
-        }
-      } else {
-        try {
-          data = await generateViaAPI(full, engine);
-        } catch (e) {
-          // fallback free client
-          data = await generateClientPollinations(full);
-          data.note = 'Fell back to free Pollinations client: ' + (e.message || e);
-        }
-      }
-
-      const dataUrl = data.dataUrl || (data.imageBase64 ? `data:${data.mime || 'image/jpeg'};base64,${data.imageBase64}` : null);
-      if (!dataUrl && data.url) {
-        $('resultImg').src = data.url;
-      } else if (dataUrl) {
-        $('resultImg').src = dataUrl;
-        lastDataUrl = dataUrl;
-      } else {
-        throw new Error('No image in response');
-      }
-      $('resultImg').classList.remove('hidden');
-      $('btnDownload').disabled = !lastDataUrl;
-      status('Done · ' + (data.engine || 'free'));
-      $('meta').textContent = `${data.engine || 'free'} · seed ${data.seed ?? '—'} · ${data.note || ''}`.trim();
-      $('engineBadge').textContent = 'Free AI · ' + (data.engine || 'online');
-
-      hist.unshift({ t: Date.now(), dataUrl: lastDataUrl || data.url, prompt: full.slice(0, 120), engine: data.engine });
-      hist = hist.slice(0, 24);
-      localStorage.setItem('ceranFreeHist', JSON.stringify(hist.filter(h => h.dataUrl && h.dataUrl.startsWith('data:'))));
-      renderGallery();
-    } catch (err) {
-      status('Error');
-      $('meta').textContent = String(err.message || err);
-      alert('Generation failed: ' + (err.message || err) + '\n\nTry again or use Pollinations engine.');
-    } finally {
-      document.getElementById('loading')?.remove();
-      btn.disabled = false;
+const STYLES={
+'saran-cling':'clear saran wrap / ceran plastic film pressed firmly stretching over form, taut transparent cling, artistic nude photography, high detail, soft studio light',
+'front-firm':'front view nude art photography model, wrap pressed firmly stretching over vulva and mons, transparent plastic cling, elegant studio',
+'stretch-gluteus':'rear view nude art photography model, wrap stretching over gluteus, hands spreading, pressed taut plastic, fine art',
+'reflective':'reflective wet-look plastic film, specular highlights, clinical art light, photorealistic',
+'soft-studio':'soft diffused studio light, pale gray seamless, elegant fine art nude photography'
+};
+let last=null;
+document.getElementById('btnGen').onclick=async()=>{
+  const base=document.getElementById('prompt').value.trim(); if(!base) return alert('Enter a prompt');
+  const style=document.getElementById('style').value;
+  const intensity=document.getElementById('intensity').value;
+  const [w,h]=document.getElementById('aspect').value.split('x').map(Number);
+  const seed=document.getElementById('seed').value||Math.floor(Math.random()*1e9);
+  const full=base+', '+(STYLES[style]||STYLES['saran-cling'])+', wrap intensity '+intensity+'%, photorealistic, high detail, tasteful erotic fine art composition';
+  const btn=document.getElementById('btnGen'); btn.disabled=true;
+  document.getElementById('st').textContent='Generating free…';
+  document.getElementById('ph').classList.add('hidden');
+  try{
+    let dataUrl=null, engine='pollinations-flux';
+    try{
+      const r=await fetch('/api/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:base,style,width:w,height:h,seed,engine:'pollinations'})});
+      if(r.ok){ const j=await r.json(); dataUrl=j.dataUrl; engine=j.engine||engine; }
+    }catch(_){}
+    if(!dataUrl){
+      const url='https://image.pollinations.ai/prompt/'+encodeURIComponent(full)+'?width='+w+'&height='+h+'&seed='+seed+'&nologo=true&enhance=true&model=flux&t='+Date.now();
+      const img=new Image(); img.crossOrigin='anonymous';
+      await new Promise((res,rej)=>{img.onload=res;img.onerror=()=>rej(new Error('Free AI load failed'));img.src=url;});
+      const c=document.createElement('canvas'); c.width=img.naturalWidth||w; c.height=img.naturalHeight||h;
+      c.getContext('2d').drawImage(img,0,0); dataUrl=c.toDataURL('image/jpeg',0.92);
     }
-  }
-
-  function renderGallery() {
-    const g = $('gallery');
-    const items = JSON.parse(localStorage.getItem('ceranFreeHist') || '[]');
-    if (!items.length) {
-      g.innerHTML = '<p class="text-muted text-sm col-span-full">No free generations yet this session.</p>';
-      return;
-    }
-    g.innerHTML = items.map((h, i) =>
-      `<button type="button" class="rounded-xl overflow-hidden border border-white/10 aspect-square bg-surface" data-i="${i}">
-        <img src="${h.dataUrl}" class="w-full h-full object-cover" alt="" loading="lazy" />
-      </button>`
-    ).join('');
-    g.querySelectorAll('button[data-i]').forEach((b) => {
-      b.onclick = () => {
-        const h = items[+b.dataset.i];
-        if (!h) return;
-        $('resultImg').src = h.dataUrl;
-        $('resultImg').classList.remove('hidden');
-        $('placeholder')?.classList.add('hidden');
-        lastDataUrl = h.dataUrl;
-        $('btnDownload').disabled = false;
-        status('From gallery');
-      };
-    });
-  }
-
-  $('btnGen').onclick = runGenerate;
-  $('btnRandom').onclick = () => {
-    const presets = Object.keys(styleMap);
-    currentStyle = presets[Math.floor(Math.random() * presets.length)];
-    document.querySelectorAll('#styleChips .chip').forEach((b) => {
-      b.classList.toggle('on', b.dataset.style === currentStyle);
-    });
-    $('intensity').value = 40 + Math.floor(Math.random() * 55);
-    $('intensityVal').textContent = $('intensity').value;
-    $('seed').value = Math.floor(Math.random() * 99999);
-    const starters = [
-      'A ceran wrapped neglige pressed firmly stretching over the form of a nude art photography model',
-      'Rear view nude model with saran wrap stretched tightly across hips and gluteus, hands spreading',
-      'Extreme close-up of clear ceran wrap stretched taut over skin, plastic texture and light',
-      'Three-quarter nude art study fully wrapped in multi-layer cling film, soft studio light'
-    ];
-    $('prompt').value = starters[Math.floor(Math.random() * starters.length)];
-  };
-  $('btnDownload').onclick = () => {
-    if (!lastDataUrl) return;
-    const a = document.createElement('a');
-    a.href = lastDataUrl;
-    a.download = 'ceran-free-' + Date.now() + '.jpg';
-    a.click();
-  };
-  $('btnCopyPrompt').onclick = async () => {
-    const t = enhancedPrompt();
-    try {
-      await navigator.clipboard.writeText(t);
-      status('Prompt copied');
-    } catch {
-      prompt('Copy prompt:', t);
-    }
-  };
-
-  // health check for worker
-  fetch('/api/health').then(r => r.json()).then((h) => {
-    if (h.ok) {
-      $('engineBadge').textContent = h.engines?.workersAI
-        ? 'Free AI · CF Workers AI + Pollinations'
-        : 'Free AI · Pollinations (+ worker)';
-    }
-  }).catch(() => {
-    $('engineBadge').textContent = 'Free AI · Pollinations (static)';
-  });
-
-  renderGallery();
-})();
+    last=dataUrl; const out=document.getElementById('out'); out.src=dataUrl; out.classList.remove('hidden');
+    document.getElementById('btnDl').disabled=false;
+    document.getElementById('st').textContent='Done · '+engine+' · seed '+seed;
+  }catch(e){
+    document.getElementById('st').textContent='Error';
+    document.getElementById('ph').classList.remove('hidden');
+    alert('Generation failed: '+e.message);
+  }finally{ btn.disabled=false; }
+};
+document.getElementById('btnDl').onclick=()=>{ if(!last)return; const a=document.createElement('a'); a.href=last; a.download='ceran-free-'+Date.now()+'.jpg'; a.click(); };
 </script>
 </body>
 </html>
