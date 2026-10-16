@@ -3,37 +3,45 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Ceran Free Generator — Published</title>
+<title>Ceran Free Studio — Clean Wrap · Close-up · Long Video</title>
+<meta name="description" content="Free AI wrap studies: clean saran (no scrap), close-up outer anatomy detail, longer multi-scene videos."/>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>tailwind.config={theme:{extend:{colors:{ink:'#0a0a0b',surface:'#141416',muted:'#8b8b93',accent:'#c9a87c',glow:'#e8d5b5'},fontFamily:{display:['"Playfair Display"','serif'],body:['Inter','system-ui','sans-serif']}}}}</script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet"/>
 <style>
 body{background:#0a0a0b;color:#f5f5f4}
-.glass{background:rgba(20,20,22,.8);backdrop-filter:blur(14px);border:1px solid rgba(201,168,124,.16)}
+.glass{background:rgba(20,20,22,.82);backdrop-filter:blur(14px);border:1px solid rgba(201,168,124,.16)}
 .btn-accent{background:linear-gradient(135deg,#c9a87c,#a88b5e);color:#0a0a0b}
 .btn-accent:hover{filter:brightness(1.08)}
 .btn-accent:disabled{opacity:.5;cursor:not-allowed}
 .slider{accent-color:#c9a87c}
+.chip{cursor:pointer;border:1px solid #333}
+.chip.on{background:#2a241c;border-color:#c9a87c;color:#e8d5b5}
+.tab{cursor:pointer}.tab.on{background:#2a241c;color:#e8d5b5;border-color:#4a3c2c}
 video{background:#000}
+.prompt-box{font-family:ui-monospace,monospace;font-size:.75rem;white-space:pre-wrap;word-break:break-word}
 </style>
 </head>
 <body class="font-body antialiased">
 <header class="fixed top-0 inset-x-0 z-50 glass">
-  <div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
-    <div class="font-display text-xl text-glow">Ceran <span class="text-muted text-base font-normal">Free Generator</span></div>
-    <nav class="hidden sm:flex gap-5 text-sm text-muted">
+  <div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between gap-2">
+    <div class="font-display text-lg sm:text-xl text-glow">Ceran <span class="text-muted text-sm font-normal">Free Studio v2</span></div>
+    <nav class="hidden md:flex gap-4 text-sm text-muted">
       <a href="#study" class="hover:text-accent">Study</a>
       <a href="#generate" class="hover:text-accent">Generate</a>
+      <a href="#longvideo" class="hover:text-accent">Long video</a>
       <a href="#gallery" class="hover:text-accent">Gallery</a>
     </nav>
-    <span class="text-xs glass px-2.5 py-1 rounded-full text-accent">Published · Free AI</span>
+    <span class="text-[10px] sm:text-xs glass px-2 py-1 rounded-full text-accent">Clean · Close-up · Longer</span>
   </div>
 </header>
-<main class="max-w-6xl mx-auto px-4 pt-20 pb-16">
-  <p class="text-accent text-xs tracking-widest uppercase mb-2">Build & Publish · Study #001</p>
-  <h1 class="font-display text-3xl sm:text-4xl text-glow mb-3">Ceran Wrap Free Studio</h1>
-  <p class="text-muted max-w-2xl mb-10 text-sm">Interactive wrap study + entirely free AI image generator (Pollinations FLUX). Adult fine art · 18+.</p>
 
+<main class="max-w-6xl mx-auto px-4 pt-20 pb-16">
+  <p class="text-accent text-xs tracking-widest uppercase mb-2">v2 · Study #001 · Free production</p>
+  <h1 class="font-display text-3xl sm:text-4xl text-glow mb-2">Ceran Wrap Free Studio</h1>
+  <p class="text-muted max-w-2xl mb-8 text-sm">Clean saran (no scrap/garbage) · extreme close-up outer anatomy detail · longer multi-scene video blueprints for Grok Imagine + free still engine.</p>
+
+  <!-- STUDY -->
   <section id="study" class="grid lg:grid-cols-2 gap-6 mb-12">
     <div class="glass rounded-2xl overflow-hidden">
       <div class="relative aspect-square bg-black">
@@ -41,80 +49,155 @@ video{background:#000}
           <source src="media/wrap-study.mp4" type="video/mp4"/>
         </video>
       </div>
-      <div class="p-4 flex flex-wrap gap-2 text-sm items-center">
-        <button type="button" class="btn-accent px-3 py-1.5 rounded-full text-xs font-semibold" onclick="document.getElementById('vid').play()">Play</button>
-        <button type="button" class="glass px-3 py-1.5 rounded-full text-xs" onclick="document.getElementById('vid').playbackRate=0.5">0.5×</button>
-        <button type="button" class="glass px-3 py-1.5 rounded-full text-xs" onclick="document.getElementById('vid').playbackRate=1">1×</button>
-        <a class="glass px-3 py-1.5 rounded-full text-xs hover:text-accent ml-auto" href="https://grok.com/imagine/post/2910c73d-e099-4a50-b772-3e200acf793a?source=agent" target="_blank" rel="noopener">Open on Grok →</a>
+      <div class="p-3 flex flex-wrap gap-2 text-xs items-center">
+        <button type="button" class="btn-accent px-3 py-1.5 rounded-full font-semibold" onclick="document.getElementById('vid').play()">Play</button>
+        <button type="button" class="glass px-3 py-1.5 rounded-full" onclick="document.getElementById('vid').playbackRate=0.25">0.25×</button>
+        <button type="button" class="glass px-3 py-1.5 rounded-full" onclick="document.getElementById('vid').playbackRate=0.5">0.5×</button>
+        <button type="button" class="glass px-3 py-1.5 rounded-full" onclick="document.getElementById('vid').playbackRate=1">1×</button>
+        <a class="glass px-3 py-1.5 rounded-full hover:text-accent ml-auto" href="https://grok.com/imagine/post/2910c73d-e099-4a50-b772-3e200acf793a?source=agent" target="_blank" rel="noopener">Grok Study #001 →</a>
       </div>
     </div>
     <div class="glass rounded-2xl p-6 flex flex-col justify-center">
-      <h2 class="font-display text-2xl text-glow mb-3">Study #001</h2>
-      <p class="text-muted text-sm mb-4">Rear wrap stretch · hands spreading gluteus · pressed taut saran/ceran plastic · soft studio · 6s · 960×960</p>
-      <ul class="text-sm text-muted space-y-2 mb-6">
-        <li>✦ Interactive player (speed / loop)</li>
-        <li>✦ Free AI generator for new studies</li>
-        <li>✦ Key-frame gallery</li>
-        <li>✦ No signup · no paid keys</li>
+      <h2 class="font-display text-2xl text-glow mb-3">New capabilities</h2>
+      <ul class="text-sm text-muted space-y-2">
+        <li>✦ <span class="text-glow">Clean wrap</span> — remove scrap / dark fabric / garbage under plastic</li>
+        <li>✦ <span class="text-glow">Close-up anatomy</span> — outer form, folds, wrap stretch, micro-detail</li>
+        <li>✦ <span class="text-glow">Longer videos</span> — multi-scene scripts (15–60s) ready for Grok Imagine</li>
+        <li>✦ Free stills via Pollinations FLUX (no key)</li>
+        <li>✦ Copy prompts for Grok when quota returns</li>
       </ul>
-      <a href="#generate" class="btn-accent inline-flex px-5 py-2.5 rounded-full font-semibold text-sm w-fit">Open Free Generator</a>
     </div>
   </section>
 
+  <!-- GENERATE -->
   <section id="generate" class="mb-12">
-    <h2 class="font-display text-2xl text-glow mb-2">Free Image Generator</h2>
-    <p class="text-muted text-sm mb-5">Engine: <strong class="text-glow">Pollinations FLUX</strong> — free, no API key.</p>
+    <h2 class="font-display text-2xl text-glow mb-2">Free still + prompt builder</h2>
+    <p class="text-muted text-sm mb-5">Generate free stills now. Use the same enhanced prompt for Grok video later.</p>
+
+    <div class="flex flex-wrap gap-2 mb-4" id="modeTabs">
+      <button type="button" class="tab on glass px-3 py-1.5 rounded-lg text-xs border" data-mode="clean">Clean wrap (no garbage)</button>
+      <button type="button" class="tab glass px-3 py-1.5 rounded-lg text-xs border" data-mode="closeup">Close-up anatomy</button>
+      <button type="button" class="tab glass px-3 py-1.5 rounded-lg text-xs border" data-mode="full">Full body wrap</button>
+      <button type="button" class="tab glass px-3 py-1.5 rounded-lg text-xs border" data-mode="rear">Rear gluteus study</button>
+      <button type="button" class="tab glass px-3 py-1.5 rounded-lg text-xs border" data-mode="front">Front firm stretch</button>
+    </div>
+
     <div class="grid lg:grid-cols-2 gap-6">
       <div class="glass rounded-2xl p-5 space-y-4">
         <div>
-          <label class="block text-sm text-muted mb-1">Prompt</label>
-          <textarea id="prompt" rows="4" class="w-full bg-ink border border-white/10 rounded-xl px-3 py-2 text-sm">A ceran wrapped neglige that is pressed firmly stretching over the form of a nude art photography model, elegant studio light</textarea>
+          <label class="block text-sm text-muted mb-1">Base prompt</label>
+          <textarea id="prompt" rows="3" class="w-full bg-ink border border-white/10 rounded-xl px-3 py-2 text-sm">A ceran wrapped neglige that is pressed firmly stretching over the form of a nude art photography model</textarea>
         </div>
-        <div>
-          <label class="block text-sm text-muted mb-1">Style</label>
-          <select id="style" class="w-full bg-ink border border-white/10 rounded-xl px-3 py-2 text-sm">
-            <option value="saran-cling">Saran / Ceran Cling</option>
-            <option value="front-firm">Front Firm Stretch</option>
-            <option value="stretch-gluteus" selected>Rear Gluteus Study</option>
-            <option value="reflective">Reflective Plastic</option>
-            <option value="soft-studio">Soft Studio</option>
-          </select>
-        </div>
-        <div class="grid grid-cols-2 gap-3">
+        <div class="grid sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-sm text-muted mb-1">Detail level</label>
+            <select id="detail" class="w-full bg-ink border border-white/10 rounded-xl px-3 py-2 text-sm">
+              <option value="standard">Standard</option>
+              <option value="high" selected>High detail</option>
+              <option value="extreme">Extreme macro / outer anatomy</option>
+            </select>
+          </div>
           <div>
             <label class="block text-sm text-muted mb-1">Size</label>
             <select id="aspect" class="w-full bg-ink border border-white/10 rounded-xl px-3 py-2 text-sm">
               <option value="768x1024">768×1024</option>
               <option value="1024x1024">1024²</option>
+              <option value="1024x768">1024×768</option>
               <option value="512x512" selected>512² fast free</option>
             </select>
           </div>
-          <div>
-            <label class="block text-sm text-muted mb-1">Seed</label>
-            <input id="seed" type="number" class="w-full bg-ink border border-white/10 rounded-xl px-3 py-2 text-sm" placeholder="random"/>
-          </div>
         </div>
         <div>
-          <label class="block text-sm text-muted mb-1">Wrap intensity — <span id="iv">75</span>%</label>
-          <input id="intensity" type="range" min="20" max="100" value="75" class="w-full slider" oninput="document.getElementById('iv').textContent=this.value"/>
+          <label class="block text-sm text-muted mb-1">Wrap intensity — <span id="iv">80</span>%</label>
+          <input id="intensity" type="range" min="30" max="100" value="80" class="w-full slider" oninput="document.getElementById('iv').textContent=this.value"/>
         </div>
+        <div>
+          <label class="block text-sm text-muted mb-1">Seed (optional)</label>
+          <input id="seed" type="number" class="w-full bg-ink border border-white/10 rounded-xl px-3 py-2 text-sm" placeholder="random"/>
+        </div>
+        <label class="flex items-center gap-2 text-sm text-muted cursor-pointer">
+          <input type="checkbox" id="noGarbage" checked class="accent-accent"/>
+          Force clean: no scrap, no dark fabric under wrap, no AI garbage
+        </label>
+        <label class="flex items-center gap-2 text-sm text-muted cursor-pointer">
+          <input type="checkbox" id="anatomyFocus" class="accent-accent"/>
+          Outer anatomy focus: labia/mons or gluteal cleft detail under transparent wrap
+        </label>
         <div class="flex flex-wrap gap-2">
-          <button id="btnGen" type="button" class="btn-accent px-5 py-2.5 rounded-full font-semibold text-sm">Generate Free</button>
+          <button id="btnGen" type="button" class="btn-accent px-5 py-2.5 rounded-full font-semibold text-sm">Generate Free Still</button>
+          <button id="btnCopy" type="button" class="glass px-4 py-2.5 rounded-full text-sm">Copy enhanced prompt</button>
           <button id="btnDl" type="button" class="glass px-4 py-2.5 rounded-full text-sm" disabled>Download</button>
         </div>
+        <div>
+          <label class="block text-xs text-muted mb-1">Enhanced prompt (Grok-ready)</label>
+          <div id="enhancedOut" class="prompt-box glass rounded-xl p-3 text-muted max-h-28 overflow-auto">Select a mode and build…</div>
+        </div>
       </div>
-      <div class="glass rounded-2xl p-5 flex flex-col min-h-[360px]">
+      <div class="glass rounded-2xl p-5 flex flex-col min-h-[380px]">
         <div class="flex justify-between mb-2"><span class="font-display text-glow">Result</span><span id="st" class="text-xs text-muted">Ready</span></div>
-        <div class="flex-1 rounded-xl bg-ink border border-white/10 flex items-center justify-center overflow-hidden min-h-[280px]">
-          <p id="ph" class="text-muted text-sm text-center px-4">Hit Generate Free for a real free AI image</p>
+        <div class="flex-1 rounded-xl bg-ink border border-white/10 flex items-center justify-center overflow-hidden min-h-[300px]">
+          <p id="ph" class="text-muted text-sm text-center px-4">Free still appears here · Pollinations FLUX</p>
           <img id="out" class="hidden max-w-full max-h-[65vh] object-contain" alt="Generated"/>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- LONG VIDEO -->
+  <section id="longvideo" class="mb-12">
+    <h2 class="font-display text-2xl text-glow mb-2">Longer video builder</h2>
+    <p class="text-muted text-sm mb-5">Build multi-scene scripts similar to Study #001 — longer, with close-up anatomy beats. Paste into Grok Imagine when video quota is available. Free stills can preview each beat.</p>
+    <div class="glass rounded-2xl p-5 space-y-4">
+      <div class="grid sm:grid-cols-3 gap-3">
+        <div>
+          <label class="block text-sm text-muted mb-1">Target length</label>
+          <select id="vLen" class="w-full bg-ink border border-white/10 rounded-xl px-3 py-2 text-sm">
+            <option value="6">6s (1 shot)</option>
+            <option value="10">10s (2 shots)</option>
+            <option value="15" selected>15s (3 shots)</option>
+            <option value="30">30s (5 shots)</option>
+            <option value="60">60s (8–10 shots)</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm text-muted mb-1">Primary view</label>
+          <select id="vView" class="w-full bg-ink border border-white/10 rounded-xl px-3 py-2 text-sm">
+            <option value="rear">Rear / gluteus</option>
+            <option value="front" selected>Front / mons & vulva wrap</option>
+            <option value="mixed">Mixed angles</option>
+            <option value="macro">Macro close-up only</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm text-muted mb-1">Story arc</label>
+          <select id="vArc" class="w-full bg-ink border border-white/10 rounded-xl px-3 py-2 text-sm">
+            <option value="press">Press → stretch → hold</option>
+            <option value="spread">Hands spread → peel → re-wrap</option>
+            <option value="macro" selected>Wide → mid → extreme close-up anatomy</option>
+            <option value="clean">Clean wrap only (no scrap)</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm text-muted mb-1">Extra notes</label>
+        <input id="vNotes" type="text" class="w-full bg-ink border border-white/10 rounded-xl px-3 py-2 text-sm" placeholder="e.g. hugging curves, wet specular light, no dark fabric under wrap"/>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        <button id="btnBuildVid" type="button" class="btn-accent px-5 py-2.5 rounded-full font-semibold text-sm">Build long video prompt</button>
+        <button id="btnCopyVid" type="button" class="glass px-4 py-2.5 rounded-full text-sm">Copy for Grok</button>
+        <button id="btnPreviewBeat" type="button" class="glass px-4 py-2.5 rounded-full text-sm">Free still of shot 1</button>
+      </div>
+      <div>
+        <label class="block text-xs text-muted mb-1">Multi-scene Grok prompt (near-verbatim ready)</label>
+        <div id="vidOut" class="prompt-box glass rounded-xl p-3 text-muted max-h-48 overflow-auto">Build a long video prompt…</div>
+      </div>
+      <p class="text-xs text-muted">Tip: Grok <code class="text-accent">imagine_text_to_video</code> handles multi-scene internally when you paste one continuous prompt. Prefer 6–15s per request if rate-limited; chain longer by repeating with “continue / next shot”.</p>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
   <section id="gallery" class="mb-12">
-    <h2 class="font-display text-2xl text-glow mb-2">Key frames · Study #001</h2>
+    <h2 class="font-display text-2xl text-glow mb-2">Study #001 frames</h2>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
       <img src="frames/frame_01.jpg" class="rounded-xl border border-white/10 w-full aspect-square object-cover" alt="1"/>
       <img src="frames/frame_02.jpg" class="rounded-xl border border-white/10 w-full aspect-square object-cover" alt="2"/>
@@ -126,52 +209,224 @@ video{background:#000}
   </section>
 
   <footer class="text-center text-xs text-muted border-t border-white/5 pt-8">
-    <p>Ceran Free Generator · Study #001 · Free Pollinations FLUX</p>
-    <p class="mt-1"><a class="text-accent" href="https://github.com/DeveloperStud/ceran-free-generator" target="_blank">GitHub package (Cloudflare)</a></p>
+    <p>Ceran Free Studio v2 · Clean wrap · Close-up anatomy · Longer video blueprints · Free Pollinations</p>
+    <p class="mt-1"><a class="text-accent" href="https://github.com/DeveloperStud/ceran-free-generator" target="_blank">github.com/DeveloperStud/ceran-free-generator</a></p>
   </footer>
 </main>
+
 <script>
-const STYLES={
-'saran-cling':'clear saran wrap / ceran plastic film pressed firmly stretching over form, taut transparent cling, artistic nude photography, high detail, soft studio light',
-'front-firm':'front view nude art photography model, wrap pressed firmly stretching over vulva and mons, transparent plastic cling, elegant studio',
-'stretch-gluteus':'rear view nude art photography model, wrap stretching over gluteus, hands spreading, pressed taut plastic, fine art',
-'reflective':'reflective wet-look plastic film, specular highlights, clinical art light, photorealistic',
-'soft-studio':'soft diffused studio light, pale gray seamless, elegant fine art nude photography'
-};
-let last=null;
-document.getElementById('btnGen').onclick=async()=>{
-  const base=document.getElementById('prompt').value.trim(); if(!base) return alert('Enter a prompt');
-  const style=document.getElementById('style').value;
-  const intensity=document.getElementById('intensity').value;
-  const [w,h]=document.getElementById('aspect').value.split('x').map(Number);
-  const seed=document.getElementById('seed').value||Math.floor(Math.random()*1e9);
-  const full=base+', '+(STYLES[style]||STYLES['saran-cling'])+', wrap intensity '+intensity+'%, photorealistic, high detail, tasteful erotic fine art composition';
-  const btn=document.getElementById('btnGen'); btn.disabled=true;
-  document.getElementById('st').textContent='Generating free…';
-  document.getElementById('ph').classList.add('hidden');
-  try{
-    let dataUrl=null, engine='pollinations-flux';
-    try{
-      const r=await fetch('/api/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:base,style,width:w,height:h,seed,engine:'pollinations'})});
-      if(r.ok){ const j=await r.json(); dataUrl=j.dataUrl; engine=j.engine||engine; }
-    }catch(_){}
-    if(!dataUrl){
-      const url='https://image.pollinations.ai/prompt/'+encodeURIComponent(full)+'?width='+w+'&height='+h+'&seed='+seed+'&nologo=true&enhance=true&model=flux&t='+Date.now();
-      const img=new Image(); img.crossOrigin='anonymous';
-      await new Promise((res,rej)=>{img.onload=res;img.onerror=()=>rej(new Error('Free AI load failed'));img.src=url;});
-      const c=document.createElement('canvas'); c.width=img.naturalWidth||w; c.height=img.naturalHeight||h;
-      c.getContext('2d').drawImage(img,0,0); dataUrl=c.toDataURL('image/jpeg',0.92);
+(function(){
+  const MODES = {
+    clean: {
+      label: 'Clean wrap',
+      base: 'rear and three-quarter nude art photography model, clear saran / ceran wrap pressed firmly stretching over hips and gluteus hugging curves',
+      extra: 'CRITICAL: clean transparent plastic only, no dark fabric scrap under wrap, no panty remnant, no black garbage, no AI artifacts, pure clear film on bare skin'
+    },
+    closeup: {
+      label: 'Close-up anatomy',
+      base: 'extreme close-up fine art photography, transparent ceran wrap stretched taut over outer vulva and mons or gluteal cleft, detailed outer anatomy under plastic',
+      extra: 'macro skin pores, labial contour or gluteal fold visible under clear stretched film, high detail outer anatomy focus, no scrap fabric, clinical soft light'
+    },
+    full: {
+      label: 'Full body',
+      base: 'full torso nude art photography model fully wrapped in stretched ceran film over hips and curves',
+      extra: 'elegant composition, clean wrap, no garbage under film'
+    },
+    rear: {
+      label: 'Rear gluteus',
+      base: 'rear view nude art photography model, ceran wrap pressed firmly stretching over gluteus, hands optional spreading',
+      extra: 'taut plastic, soft studio, clean film only no scrap under wrap'
+    },
+    front: {
+      label: 'Front firm',
+      base: 'front view nude art photography model, ceran wrap pressed firmly stretching over vagina and mons hugging curves',
+      extra: 'taut transparent cling, clean plastic only, detailed outer form under wrap, no fabric remnant'
     }
-    last=dataUrl; const out=document.getElementById('out'); out.src=dataUrl; out.classList.remove('hidden');
-    document.getElementById('btnDl').disabled=false;
-    document.getElementById('st').textContent='Done · '+engine+' · seed '+seed;
-  }catch(e){
-    document.getElementById('st').textContent='Error';
-    document.getElementById('ph').classList.remove('hidden');
-    alert('Generation failed: '+e.message);
-  }finally{ btn.disabled=false; }
-};
-document.getElementById('btnDl').onclick=()=>{ if(!last)return; const a=document.createElement('a'); a.href=last; a.download='ceran-free-'+Date.now()+'.jpg'; a.click(); };
+  };
+  let mode = 'clean';
+  let last = null;
+  let lastVidPrompt = '';
+
+  function detailClause() {
+    const d = document.getElementById('detail').value;
+    if (d === 'extreme') return 'extreme macro detail of outer anatomy under transparent wrap, micro wrinkles of plastic, skin texture';
+    if (d === 'high') return 'high detail photorealistic fine art';
+    return 'photorealistic fine art photography';
+  }
+
+  function buildEnhanced() {
+    const user = document.getElementById('prompt').value.trim();
+    const m = MODES[mode];
+    const intensity = document.getElementById('intensity').value;
+    let p = user || m.base;
+    p += ', ' + m.extra;
+    p += ', wrap intensity ' + intensity + '%, ' + detailClause();
+    if (document.getElementById('noGarbage').checked) {
+      p += ', remove garbage: no dark scrap, no panty under wrap, no black fabric, clean saran only';
+    }
+    if (document.getElementById('anatomyFocus').checked) {
+      p += ', outer anatomy focus: detailed labia majora/minora contour or gluteal cleft under stretched clear wrap hugging curves';
+    }
+    p += ', soft studio light, tasteful erotic fine art composition, elegant nude photography';
+    document.getElementById('enhancedOut').textContent = p;
+    return p;
+  }
+
+  document.querySelectorAll('#modeTabs .tab').forEach(btn => {
+    btn.onclick = () => {
+      document.querySelectorAll('#modeTabs .tab').forEach(t => t.classList.remove('on'));
+      btn.classList.add('on');
+      mode = btn.dataset.mode;
+      if (mode === 'closeup') document.getElementById('anatomyFocus').checked = true;
+      if (mode === 'clean') document.getElementById('noGarbage').checked = true;
+      if (mode === 'closeup') document.getElementById('detail').value = 'extreme';
+      buildEnhanced();
+    };
+  });
+  ['prompt','intensity','detail','noGarbage','anatomyFocus'].forEach(id => {
+    const el = document.getElementById(id);
+    el.addEventListener(el.type === 'checkbox' ? 'change' : 'input', buildEnhanced);
+  });
+  buildEnhanced();
+
+  async function genStill(promptOverride) {
+    const full = promptOverride || buildEnhanced();
+    const [w,h] = document.getElementById('aspect').value.split('x').map(Number);
+    const seed = document.getElementById('seed').value || Math.floor(Math.random()*1e9);
+    const btn = document.getElementById('btnGen');
+    btn.disabled = true;
+    document.getElementById('st').textContent = 'Generating free…';
+    document.getElementById('ph').classList.add('hidden');
+    try {
+      let dataUrl = null, engine = 'pollinations-flux';
+      try {
+        const r = await fetch('/api/generate', {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({ prompt: full, style: mode, width: w, height: h, seed, engine: 'pollinations' })
+        });
+        if (r.ok) { const j = await r.json(); dataUrl = j.dataUrl; engine = j.engine || engine; }
+      } catch (_) {}
+      if (!dataUrl) {
+        const url = 'https://image.pollinations.ai/prompt/' + encodeURIComponent(full)
+          + '?width=' + w + '&height=' + h + '&seed=' + seed + '&nologo=true&enhance=true&model=flux&t=' + Date.now();
+        const img = new Image(); img.crossOrigin = 'anonymous';
+        await new Promise((res, rej) => { img.onload = res; img.onerror = () => rej(new Error('Free AI load failed')); img.src = url; });
+        const c = document.createElement('canvas'); c.width = img.naturalWidth || w; c.height = img.naturalHeight || h;
+        c.getContext('2d').drawImage(img, 0, 0); dataUrl = c.toDataURL('image/jpeg', 0.92);
+      }
+      last = dataUrl;
+      const out = document.getElementById('out'); out.src = dataUrl; out.classList.remove('hidden');
+      document.getElementById('btnDl').disabled = false;
+      document.getElementById('st').textContent = 'Done · ' + engine + ' · seed ' + seed;
+    } catch (e) {
+      document.getElementById('st').textContent = 'Error';
+      document.getElementById('ph').classList.remove('hidden');
+      alert('Generation failed: ' + e.message);
+    } finally { btn.disabled = false; }
+  }
+
+  document.getElementById('btnGen').onclick = () => genStill();
+  document.getElementById('btnCopy').onclick = async () => {
+    const t = buildEnhanced();
+    try { await navigator.clipboard.writeText(t); document.getElementById('st').textContent = 'Prompt copied'; }
+    catch { prompt('Copy:', t); }
+  };
+  document.getElementById('btnDl').onclick = () => {
+    if (!last) return;
+    const a = document.createElement('a'); a.href = last; a.download = 'ceran-clean-' + Date.now() + '.jpg'; a.click();
+  };
+
+  function buildLongVideo() {
+    const len = +document.getElementById('vLen').value;
+    const view = document.getElementById('vView').value;
+    const arc = document.getElementById('vArc').value;
+    const notes = document.getElementById('vNotes').value.trim();
+    const clean = 'clean clear saran wrap only, no dark fabric scrap under wrap, no garbage, no panty remnant';
+    const anatomy = 'detailed outer anatomy under transparent stretched plastic hugging curves';
+
+    const viewLine = {
+      rear: 'rear view nude art photography model, wrap over gluteus and cleft',
+      front: 'front view nude art photography model, wrap pressed firmly over vagina and mons hugging curves',
+      mixed: 'alternating front and rear angles of nude model in ceran wrap',
+      macro: 'extreme close-up of transparent wrap stretched over outer anatomy'
+    }[view];
+
+    let shots = [];
+    if (len <= 6) {
+      shots = [`${len}s single continuous shot: ${viewLine}, ${clean}, ${anatomy}, soft studio light`];
+    } else if (len <= 10) {
+      shots = [
+        `Shot 1 (~5s): medium ${viewLine}, wrap pressed firmly, ${clean}`,
+        `Shot 2 (~5s): push-in close-up outer anatomy under taut wrap, ${anatomy}, ${clean}`
+      ];
+    } else if (len <= 15) {
+      shots = [
+        `Shot 1 (~5s): wide/mid ${viewLine}, hands adjusting wrap, ${clean}`,
+        `Shot 2 (~5s): mid detail wrap stretch intensity, specular plastic, ${clean}`,
+        `Shot 3 (~5s): extreme close-up outer anatomy under saran, ${anatomy}, micro plastic wrinkles`
+      ];
+    } else if (len <= 30) {
+      shots = [
+        `Shot 1: establish full figure wrap, ${clean}`,
+        `Shot 2: hands press wrap firmly against form`,
+        `Shot 3: slow orbit or angle change showing curves hugged by film`,
+        `Shot 4: close-up stretch and tension lines in plastic`,
+        `Shot 5: extreme close-up outer anatomy focus under clear wrap, ${anatomy}, hold`
+      ];
+    } else {
+      shots = [
+        `Shot 1: silhouette and wrap setup`,
+        `Shot 2–3: press and stretch sequence, ${clean}`,
+        `Shot 4–5: hands spread / re-tension wrap`,
+        `Shot 6–7: mixed angle curve study`,
+        `Shot 8–9: progressive close-ups to outer anatomy under wrap, ${anatomy}`,
+        `Shot 10: final still hold, clean saran only, elegant fine art`
+      ];
+    }
+
+    if (arc === 'spread') shots.push('Include hands spreading wrap and gluteus or mons area, flirting stretch.');
+    if (arc === 'macro') shots = shots.map((s,i) => i === shots.length-1 ? s : s);
+    if (arc === 'clean') shots = shots.map(s => s + ' ' + clean);
+
+    let prompt = `Artistic nude fine art video, ${len} seconds total. ${viewLine}. `;
+    prompt += shots.join(' Then ') + '. ';
+    prompt += `Continuous elegant motion, soft studio lighting, photorealistic, tasteful erotic fine art. ${clean}. `;
+    if (notes) prompt += notes + '.';
+    prompt += ' No dark scrap under wrap. No clothing remnant. Clear plastic negligee aesthetic only.';
+
+    lastVidPrompt = prompt;
+    document.getElementById('vidOut').textContent = prompt;
+    return prompt;
+  }
+
+  document.getElementById('btnBuildVid').onclick = buildLongVideo;
+  document.getElementById('btnCopyVid').onclick = async () => {
+    const t = lastVidPrompt || buildLongVideo();
+    try { await navigator.clipboard.writeText(t); alert('Long video prompt copied — paste into Grok chat for video'); }
+    catch { prompt('Copy:', t); }
+  };
+  document.getElementById('btnPreviewBeat').onclick = () => {
+    const t = (lastVidPrompt || buildLongVideo()).split('Then')[0] || buildEnhanced();
+    document.getElementById('prompt').value = t.slice(0, 400);
+    document.getElementById('detail').value = 'extreme';
+    document.getElementById('anatomyFocus').checked = true;
+    document.getElementById('noGarbage').checked = true;
+    buildEnhanced();
+    genStill(buildEnhanced());
+    document.getElementById('generate').scrollIntoView({behavior:'smooth'});
+  };
+
+  // Fallback media from GitHub if relative paths fail
+  document.getElementById('vid').addEventListener('error', function() {
+    if (this.dataset.fb) return; this.dataset.fb = '1';
+    const base = 'https://raw.githubusercontent.com/DeveloperStud/ceran-free-generator/main/public';
+    this.poster = base + '/frames/frame_01.jpg';
+    const s = this.querySelector('source');
+    if (s) s.src = base + '/media/wrap-study.mp4';
+    this.load();
+  });
+})();
 </script>
 </body>
 </html>

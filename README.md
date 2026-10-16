@@ -1,31 +1,21 @@
-# Ceran Free Generator (Published)
+# Ceran Free Studio v2
 
-**Live-ready free AI image studio** with Study #001 wrap video, gallery, and Pollinations FLUX free generator.
+Free wrap-study generator with:
 
-## Deploy Cloudflare Pages (free)
+- **Clean wrap** — no scrap / dark fabric / garbage under plastic  
+- **Close-up outer anatomy** — extreme detail under saran  
+- **Longer video blueprints** — 6–60s multi-scene prompts for Grok Imagine  
+- Free stills via **Pollinations FLUX** (no API key)  
+- Study #001 reference video + frames  
+
+## Deploy Cloudflare Pages
 
 ```bash
-npx wrangler login
 npx wrangler pages deploy public --project-name=ceran-free-generator
 ```
 
-Or connect this repo in Cloudflare Dashboard → Workers & Pages.
+## Live
 
-- Output directory: `public`
-- Functions: `functions/` (API `/api/generate`, `/api/health`)
-- Optional: bind Workers AI for CF FLUX
+Wix demo + GitHub Pages / CF Pages after deploy.
 
-## Local
-
-Open `public/index.html` or:
-
-```bash
-npx wrangler pages dev public
-```
-
-## Study #001
-
-Video: `public/media/wrap-study.mp4`  
-Grok post: https://grok.com/imagine/post/2910c73d-e099-4a50-b772-3e200acf793a?source=agent
-
-Adult fine-art content · 18+ · Entirely free AI (Pollinations)
+Adult fine art · 18+
